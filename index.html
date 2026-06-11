@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RDEV Hub</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="RDEV Hub — Linux gaming, dev tools, and open-source projects by rarl18">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐧</text></svg>">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css">
+  <style>
+    :root {
+      --base-color: #c9d1d9;
+      --base-background-color: #0d1117;
+      --theme-color: #39ff14;
+      --link-color: #58a6ff;
+      --code-theme-background: #161b22;
+      --sidebar-background: #0d1117;
+      --sidebar-border-color: #21262d;
+    }
+    body {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    }
+    .sidebar {
+      border-right: 1px solid #21262d;
+    }
+    .sidebar > h1 {
+      margin: 0;
+      padding: 20px 0 10px;
+    }
+    .sidebar > h1 a {
+      color: var(--theme-color);
+      font-size: 1.3rem;
+      text-decoration: none;
+    }
+    .sidebar ul li a {
+      color: var(--base-color);
+    }
+    .sidebar ul li a:hover,
+    .sidebar ul li.active > a {
+      color: var(--theme-color);
+    }
+    h1, h2, h3, h4 {
+      color: #e6edf3;
+      border-bottom: 1px solid #21262d;
+      padding-bottom: 0.3em;
+    }
+    h1 { color: var(--theme-color); }
+    a { color: var(--link-color); }
+    code {
+      color: #ff7b72;
+      background-color: var(--code-theme-background);
+    }
+    pre {
+      background-color: var(--code-theme-background) !important;
+      border: 1px solid #21262d;
+      border-radius: 6px;
+    }
+    blockquote {
+      border-left: 4px solid var(--theme-color);
+      color: #8b949e;
+    }
+    table th, table tr {
+      border: 1px solid #21262d;
+    }
+    table tr:nth-child(2n) {
+      background-color: #161b22;
+    }
+    .markdown-section {
+      max-width: 900px;
+    }
+    .app-name-link img {
+      border-radius: 50%;
+    }
+    .cover.show {
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+    }
+    .cover .cover-main > p:last-child a {
+      border: 1px solid var(--theme-color);
+      color: var(--theme-color);
+      background: transparent;
+      transition: 0.2s;
+    }
+    .cover .cover-main > p:last-child a:hover {
+      background: var(--theme-color);
+      color: #0d1117;
+    }
+    .badge {
+      display: inline-block;
+      margin: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: '🐧 RDEV Hub',
+      repo: 'rarl18/RDEV',
+      logo: 'https://avatars.githubusercontent.com/u/21110903?v=4',
+      loadSidebar: true,
+      loadNavbar: true,
+      subMaxLevel: 3,
+      auto2top: true,
+      coverpage: false,
+      executeScript: true,
+      formatUpdated: '{MM}/{DD}/{YYYY}',
+      copyCode: {
+        buttonText: 'Copy',
+        errorText: 'Error',
+        successText: 'Copied'
+      },
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: '🔍 Search docs',
+        noData: 'No results found.',
+        depth: 4
+      },
+      pagination: {
+        previousText: '⬅ Previous',
+        nextText: 'Next ➡',
+        crossChapter: true
+      },
+      plugins: [
+        function(hook) {
+          hook.beforeEach(function (html) {
+            const url = 'https://github.com/rarl18/RDEV/blob/main/' + (window.$docsify.routerMode === 'hash' ? '' : '');
+            return html;
+          });
+        }
+      ]
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+</body>
+</html>

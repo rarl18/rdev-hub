@@ -1,0 +1,6 @@
+- [Home](/)
+- [FAQ](/faq)
+- [Developers](/developers)
+- [License](/license)
+- [GitHub](https://github.com/rarl18)
+- [Linux Lab](https://rdevlinux.netlify.app/)
