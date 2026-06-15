@@ -95,6 +95,26 @@
 <body>
   <div id="app"></div>
   <script>
+    var projectCards = [
+      ['🤖', 'binance-ai-bot',       'AI-powered trading bot for Binance Futures',                  'Python',       'https://github.com/rarl18/binance-ai-bot'],
+      ['📬', 'ps-email-airdrop',     'Prebuilt solution for NFT airdrops via email',                'TypeScript',   'https://github.com/rarl18/ps-email-airdrop'],
+      ['🐧', 'RDEV Linux Lab',       'Game compatibility reports, Proton experiments, system tuning','Static site', 'https://rdevlinux.netlify.app/'],
+      ['🐾', 'esp32-s3-tamagotchi', 'Wireless virtual pet with ESP-NOW multiplayer & OLED display', 'ESP32 · C++', 'https://github.com/rarl18/esp32-s3-tamagotchi'],
+    ];
+
+    function buildCards() {
+      var cards = projectCards.map(function(p) {
+        return '<a href="' + p[4] + '" target="_blank" style="text-decoration:none;display:block;background:#161b22;border:1px solid #21262d;border-radius:8px;padding:18px;transition:border-color 0.2s;" onmouseover="this.style.borderColor=\'#39ff14\'" onmouseout="this.style.borderColor=\'#21262d\'">'
+          + '<div style="font-size:1.4em;margin-bottom:6px;">' + p[0] + '</div>'
+          + '<div style="color:#39ff14;font-weight:600;font-size:14px;margin-bottom:6px;font-family:monospace;">' + p[1] + '</div>'
+          + '<div style="color:#8b949e;font-size:13px;margin-bottom:14px;line-height:1.5;">' + p[2] + '</div>'
+          + '<span style="background:#0d1117;border:1px solid #21262d;border-radius:4px;padding:2px 8px;font-size:12px;color:#ff7b72;font-family:monospace;">' + p[3] + '</span>'
+          + '</a>';
+      }).join('');
+
+      return '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:16px;">' + cards + '</div>';
+    }
+
     window.$docsify = {
       name: '🐧 RDEV Hub',
       repo: 'rarl18/RDEV',
@@ -125,9 +145,8 @@
       },
       plugins: [
         function(hook) {
-          hook.beforeEach(function (html) {
-            const url = 'https://github.com/rarl18/RDEV/blob/main/' + (window.$docsify.routerMode === 'hash' ? '' : '');
-            return html;
+          hook.afterEach(function(html) {
+            return html.replace(/<p>PROJECTS_CARDS<\/p>/, buildCards());
           });
         }
       ]
