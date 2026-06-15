@@ -21,6 +21,7 @@ Welcome to **RDEV Hub** — a personal hub for my open-source projects, tools, a
 | [binance-ai-bot](https://github.com/rarl18/binance-ai-bot) | AI-powered trading bot for Binance Futures | Python |
 | [ps-email-airdrop](https://github.com/rarl18/ps-email-airdrop) | Prebuilt solution for NFT airdrops via email | TypeScript |
 | [RDEV Linux Lab](https://rdevlinux.netlify.app/) | Game compatibility reports, Proton experiments, system tuning | Static site |
+| [esp32-s3-tamagotchi](https://github.com/rarl18/esp32-s3-tamagotchi) | 🐾 ESP32-S3 Tamagotchi — Wireless Pet with ESP-NOW | ESP32 |
 
 ## 🔗 Links
 
